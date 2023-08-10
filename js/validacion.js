@@ -10,18 +10,15 @@ function comprobarPwd () {
     const password1 = document.getElementById("password1").value
     const confirmPassword = document.getElementById("confirmPassword").value
     
-    console.log(password1, confirmPassword)
-    if ( password1 !== confirmPassword ) {
-        console.log("entre al if")        
+    if ( password1 !== confirmPassword || password1.length < 6 ) {               
         return showAlertError()
     }
-    else {
-        console.log(showAlertSuccess())
+    else {        
         return showAlertSuccess()
-
     }   
 
 }
 
+
 const registerbtn = document.getElementById("regBtn")
-registerbtn.addEventListener("click", () => comprobarPwd())
+registerbtn.addEventListener("click", comprobarPwd)
